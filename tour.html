@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Virtual - Galeria Jardins</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.6/pannellum.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #4b5b58;
+        }
+        #panorama {
+            width: 100%;
+            height: 100vh;
+             }
+    </style>
+</head>
+<body>
+    <div id="panorama"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.6/pannellum.js"></script>
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+    const viewer = pannellum.viewer('panorama', {
+        "default": {
+            "firstScene": "cena1",
+            "sceneFadeDuration": 1000,
+            "autoLoad": true,
+            "autoRotate": -2
+        },
+        "scenes": {
+            "cena1": {
+                "title": "Fachada",
+                "hfov": 110,
+                "pitch": 0,
+                "yaw": 0,
+                "type": "equirectangular",
+                "panorama": "imagens/cena1.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": -8, // Altura no horizonte
+                        "yaw": 0,  // Posiciona a seta à frente, ligeiramente à direita
+                        "type": "scene",
+                        "text": "Ir para Cena 2",
+                        "sceneId": "cena2"
+                    }
+                ]
+            },
+            "cena2": {
+                "title": "Corredor",
+                "hfov": 110,
+                "pitch": 0,
+                "yaw": 0,
+                "type": "equirectangular",
+                "panorama": "imagens/cena2.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": -10,   // Altura no horizonte
+                        "yaw": -3,   // Posiciona a seta à frente, ligeiramente à esquerda
+                        "type": "scene",
+                        "text": "Ir para Cena 3",
+                        "sceneId": "cena3"
+                    }
+                ]
+            },
+            "cena3": {
+                "title": "Corredor",
+                "hfov": 110,
+                "pitch": 0,
+                "yaw": 0,
+                "type": "equirectangular",
+                "panorama": "imagens/cena3.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": -10,   // Altura no horizonte
+                        "yaw": 9,   // Posiciona a seta diretamente à frente
+                        "type": "scene",
+                        "text": "Ir para Cena 4",
+                        "sceneId": "cena4"
+                    }
+                ]
+            },
+            "cena4": {
+                "title": "Sala",
+                "hfov": 110,
+                "pitch": 0,
+                "yaw": 0,
+                "type": "equirectangular",
+                "panorama": "imagens/cena4.jpg",
+                "hotSpots": [
+                    {
+                        "pitch": 0,   // Altura no horizonte
+                        "yaw": 140,     // Posiciona a seta diretamente à frente
+                        "type": "scene",
+                        "text": "Voltar para Cena 1",
+                        "sceneId": "cena1"
+                    }
+                ]
+            }
+        }
+    });
+ 
+    viewer.on('error', function (error) {
+        console.error('Erro ao carregar o tour virtual:', error);
+        alert('Erro ao carregar o tour virtual. Verifique o console para mais detalhes.');
+    });
+});
+    </script>
+</body>
+</html>

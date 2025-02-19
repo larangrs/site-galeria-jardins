@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Jardins</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.6/pannellum.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    width: 100%;
+    overflow-x: hidden;
+}
+.logo1 {
+    width: 700px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção */
+    margin-top: -200px;
+    filter: brightness(10.0);
+}
+
+@media (max-width: 768px) {
+    .logo1 {
+        width: 200px; 
+        
+    }
+}
+
+@media (max-width: 480px) {
+    .logo1 {
+        width: 500px; /* Reduz ainda mais para celulares */
+        margin-top:-130px;
+        margin-bottom: 50px;
+    }
+}
+
+h1 {
+    font-family: 'Poiret One', cursive; /* Fonte principal */
+    font-size: 4em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slogan {
+    font-family: 'Poiret One', cursive;
+    font-size: 2.5em; /* Tamanho menor para caber mais texto */
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow:2px 2px 6px rgba(0, 0, 0, 1.0);
+    line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+}
+
+
+
+@media (max-width: 480px) {
+    header#secao1 .slogan {
+        margin-top: 20px !important;
+        font-size: 1.4em ;
+    }
+}
+
+ h2, h3 {
+    font-family: 'Poiret One', cursive;
+}
+
+h1 {
+    font-size: 3.8em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+
+
+p {
+    font-size: 2em;
+    line-height: 1.6;
+}
+
+/* Header */
+/* Estilo geral para o header */
+header#secao1 {
+    position: relative;
+    height: 400px; /* Altura do header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    overflow: hidden; /* Garante que o slider fique contido */
+}
+
+/* Overlay para escurecer o fundo */
+header#secao1 .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Escurece o fundo */
+    z-index: 1; 
+}
+
+/* Estilo para o slider */
+header#secao1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #4b5b58;
+    z-index: -1; 
+    animation: slideBackground 15s infinite ease-in-out; 
+}
+
+/* Keyframes para o slider */
+@keyframes slideBackground {
+    0% {
+        background-image: url('imagens/02.jpg');
+    }
+    25% {
+        background-image: url('imagens/image11.jpg');
+    }
+    50% {
+        background-image: url('imagens/image8.jpg');
+    }
+    75% {
+        background-image: url('imagens/image16.jpg');
+    }
+    100% {
+        background-image: url('imagens/Image17.jpg');
+    }
+}
+@media (max-width: 768px) {
+    header#secao1 {
+        height: 300px; /* Reduz a altura para telas menores */
+    }
+
+    header#secao1::before {
+        background-size: cover; /* Mantém as imagens cobrindo o espaço */
+        background-position: center;
+    }
+}
+
+header#secao1 h1,
+header#secao1 p,
+header#secao1 .info-container {
+    position: relative;
+    z-index: 2;
+    
+}
+
+header#secao1 h1,
+header#secao1 p {
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+    
+}
+
+header#secao1 .info-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    
+}
+
+header#secao1 .info-container div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header#secao1 .info-container i {
+    font-size: 1.5em;
+    color: #ffffff;
+}
+
+header#secao1 .info-container span {
+    font-size: 1.2em;
+    color: #ffffff;
+    
+}
+
+/* Tour Virtual */
+#tour {
+    padding: 40px 20px;
+    background-color: #4b5b58;
+    text-align: center;
+}
+
+.tour-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#panorama {
+    width: 100%;
+    height: 550px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.expand-tour-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #738679;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.expand-tour-button:hover {
+    background-color: #128C7E;
+}
+
+/* Planta da Sala */
+#planta-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#planta-container a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+#planta {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+#planta:hover {
+    transform: scale(1.1);
+}
+
+.planta-texto {
+    font-size: 0.8em;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+/* Localização */
+#localizacao {
+    padding: 40px 20px;
+    background-color: #b9ad96;
+    text-align: center;
+}
+
+#localizacao img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#localizacao a {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+/* Contato */
+
+/* Estilização geral do footer */
+footer {
+    background-color: #ffffff; /* Cor de fundo do footer */
+    padding: 20px 0; /* Espaçamento interno */
+}
+
+.footer-container {
+    display: flex; /* Ativa o Flexbox */
+    justify-content: space-between; /* Distribui os itens com espaço entre eles */
+    align-items: center; /* Alinha verticalmente os itens no centro */
+    max-width: 1200px; /* Largura máxima do container */
+    margin: 0 auto; /* Centraliza o container na página */
+    padding: 0 20px; /* Espaçamento lateral */
+    flex-wrap: wrap; /* Permite que os elementos quebrem linha em telas menores */
+}
+
+/* Estilização dos logos */
+.logo,
+.logoimobiliária {
+    text-align: center; /* Centraliza os itens dentro de cada bloco */
+    flex: 1; /* As logos ocupam metade do espaço disponível */
+    max-width: 50%; /* Limita a largura máxima de cada logo */
+}
+
+.logo img,
+.logoimobiliária img {
+    max-width: 250px; /* Tamanho máximo das imagens */
+    height: auto; /* Mantém a proporção */
+    margin: 0 auto; /* Centraliza as imagens horizontalmente */
+    display: block; /* Remove espaçamento abaixo da imagem */
+}
+
+.logoimobiliária p {
+    font-size: 12px; /* Tamanho reduzido para o texto acima da logo */
+    margin-bottom: 5px;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+
+/* Tablets e celulares (largura de tela até 768px) */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: row; /* Empilha os itens verticalmente */
+        align-items: center;
+        text-align: center; /* Centraliza o texto */
+        justify-content: space-between;
+        padding: 10px;
+        
+    }
+
+    .logo,
+    .logoimobiliária {
+        flex: none; /* Desativa o crescimento automático */
+        margin-bottom: 50px; /* Adiciona espaçamento entre as logos */
+        margin-top: -20px;
+
+    }
+
+    .logo img,
+    .logoimobiliária img {
+        max-width: 180px; /* Reduz o tamanho das imagens no mobile */
+    }
+}
+/* Estilização do botão flutuante */
+.whatsapp-float {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 20px; /* Distância do fundo */
+    right: 20px; /* Distância da direita */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+}
+
+.whatsapp-button {
+    display: flex; /* Permite alinhar ícone e texto horizontalmente */
+    align-items: center; /* Alinha o ícone e o texto verticalmente */
+    background-color: #25D366; /* Cor do botão do WhatsApp */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado do link */
+    padding: 10px; /* Reduz o espaçamento interno ao redor do ícone */
+    border-radius: 50%; /* Torna o botão circular */
+    font-size: 42px; /* Aumenta o tamanho do ícone */
+    transition: all 0.3s ease; /* Adiciona animação suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o botão */
+    width: 50px; /* Define uma largura fixa para o botão */
+    height: 50px; /* Define uma altura fixa para o botão */
+    justify-content: center; /* Centraliza o ícone horizontalmente */
+}
+
+.whatsapp-button i {
+    margin: 0; /* Remove o espaçamento entre o ícone e o texto */
+}
+
+.whatsapp-text {
+    display: none; /* Esconde o texto inicialmente */
+    position: absolute; /* Posiciona o texto fora do botão */
+    bottom: 60px; /* Posiciona o texto acima do botão */
+    right: 0; /* Alinha o texto à direita */
+    background-color: #25D366; /* Mesma cor do botão */
+    color: white; /* Cor do texto */
+    padding: 8px 12px; /* Espaçamento interno do texto */
+    border-radius: 5px; /* Borda arredondada */
+    font-size: 12px; /* Tamanho do texto */
+    white-space: nowrap; /* Evita que o texto quebre linha */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o texto */
+    transition: all 0.3s ease; /* Animação suave para o texto */
+}
+
+/* Efeito de hover/tap */
+.whatsapp-button:hover .whatsapp-text,
+.whatsapp-button:focus .whatsapp-text {
+    display: block; /* Mostra o texto ao passar o mouse ou tocar */
+}
+
+/* Estilo para dispositivos móveis */
+@media (max-width: 768px) {
+    .whatsapp-button {
+        font-size: 24px; /* Reduz o tamanho do ícone no mobile */
+        width: 40px; /* Reduz a largura do botão */
+        height: 45px; /* Reduz a altura do botão */
+    }
+
+    .whatsapp-text {
+        font-size: 12px; /* Reduz o tamanho do texto */
+        padding: 6px 10px; /* Reduz o espaçamento interno */
+    }
+}
+
+/* Estilo para dispositivos móveis */
+@media (max-width: 768px) {
+    .whatsapp-button {
+        font-size: 38px; /* Reduz o tamanho do texto */
+        padding: 8px 12px; /* Reduz o espaçamento interno */
+    }
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    header#secao1 .info-container span {
+        font-size: 1em;
+        align-items: center;
+        text-align: center;
+    }
+    header#secao1 .info-container{
+        margin-top:10px;
+        
+    }
+   
+
+
+/* Container de informações */
+.info-container {
+    display: flex;
+    gap: 15px !important; /* Espaçamento entre os itens */
+    
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+    justify-content: flex-start;/* Centraliza os itens */
+}
+
+/* Estilização dos spans */
+.info-container span {
+    font-size: 1em;
+    text-align: right;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    margin: 0; /* Remove margens padrão */
+    padding: 5px 10px; /* Adiciona espaçamento interno */
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo semi-transparente */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+
+    #panorama {
+        height: 250px;
+    }
+
+    #planta {
+        max-height: 150px;
+    }
+
+    .expand-tour-button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+
+    /* Ajuste de padding para evitar texto grudado */
+    header#secao1,
+    #tour,
+    #localizacao {
+        padding: 20px;
+    }
+}
+#localizacao, h3 {
+        padding: 10px;
+    }
+#mini-header {
+    background-color: #4b5b58; /* Verde musgo */
+    height: 130px; /* Altura ajustável */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 0 20px; /* Espaçamento lateral */
+}
+
+.mini-logo {
+    width: 500px; /* Tamanho da logo */
+    height: auto; /* Mantém a proporção */
+}
+/* Estilo para o título das cenas */
+.nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.336);
+        color: white;
+        border: none;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        border-radius: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-button:hover {
+        background-color: rgba(66, 65, 65, 0.226);
+    }
+
+    .nav-left {
+        left: 10px;
+    }
+
+    .nav-right {
+        right: 10px;
+    }
+    @media (max-width: 768px) {
+        .nav-button {
+            width: 20px; /* Reduz o tamanho dos botões */
+            height: 50px; /* Reduz o tamanho dos botões */
+            font-size: 18px; /* Reduz o tamanho das setas */
+        }
+    }
+</style>
+    </style>
+</head>
+<body>
+    <div id="mini-header">
+        <img src="imagens/logo1.png" alt="Galeria Jardins" class="mini-logo">
+    </div>
+    <header id="secao1">
+        <div class="overlay"></div> <!-- Camada semi-transparente -->
+        <p class="slogan">O lugar ideal para o seu negócio!</p>
+        <div class="info-container">
+            <div>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>No coração do Alto de São Manoel</span>
+            </div>
+            <div>
+                <i class="fas fa-parking"></i>
+                <span>Estacionamento Privativo</span>
+            </div>
+            <div>
+                <i class="fas fa-ruler-combined"></i>
+                <span>Área total por sala: aprox. 30m²</span>
+            </div>
+            <div>
+                <i class="fas fa-toilet"></i>
+                <span>Banheiro privativo e acessível</span>
+            </div>
+            <div>
+                <i class="fas fa-layer-group"></i>
+                <span>Mezanino incluso</span>
+            </div>
+        </div>
+    </header>
+    </header>
+    
+    <section id="tour">
+        
+        <h2>Conheça as instalações em nosso Tour Virtual</h2>
+        <div class="tour-container">
+            <!-- Contêiner principal do panorama -->
+            <div id="panorama" style="position: relative;">
+                <button id="prev-scene" class="nav-button nav-left">&#10094;</button>
+                <button id="next-scene" class="nav-button nav-right">&#10095;</button>
+            </div>
+
+<!-- Botão para abrir o tour em outra página (opcional) -->
+            <a href="tour.html" target="_blank" class="expand-tour-button">Abrir Tour Virtual</a>
+            
+        </div>
+        <div id="planta-container">
+            <a href="imagens/plantasala.pdf"target="_blank">
+            <img id="planta" src="imagens/plantasala2.jpg"alt="Planta da Sala">
+            </a>
+            <p class="planta-texto">Confira a planta padrão das salas</p>
+            </div>
+    </section>
+
+    <section id="localizacao">
+        <h2>Localização</h2>
+        <h3>Rua Dona Mariinha Mendes 02</h3>
+        <div style="position: relative; text-align: center;">
+            <img src="imagens/mapalocal1.jpg" alt="Mapa da Localização">
+            <a href="https://www.google.com.br/maps/place/Rua+Dona+Mariinha+Mendes,+02+-+Alto+de+S%C3%A3o+Manoel,+Mossor%C3%B3+-+RN,+59631-220/@-5.2093176,-37.3416288,1082m/data=!3m2!1e3!4b1!4m6!3m5!1s0x7ba07acbb4abdf9:0xd9f03d1df28d82f3!8m2!3d-5.2093229!4d-37.3390539!16s%2Fg%2F11wb1ql1_8?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank">Ver no Google Maps</a>
+        </div>
+    </section>
+    <!-- Botão Flutuante do WhatsApp -->
+<div class="whatsapp-float">
+    <a href="https://wa.me/5584988840002" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i> <!-- Ícone do WhatsApp -->
+        <span class="whatsapp-text">Entre em contato pelo WhatsApp</span>
+    </a>
+</div>
+
+<!-- Footer -->
+<footer id="contato">
+    <div class="footer-container">
+        <!-- Logo da Empresa -->
+        <div class="logo">
+            <img src="imagens/logogj1.png" alt="Logo da Empresa">
+        </div>
+
+        <!-- Logo da Imobiliária -->
+        <div class="logoimobiliária">
+            <p>Aluguéis:</p>
+            <img src="imagens/LOGOMARCA COLORIDA (1).png" alt="Logo da imobiliária">
+        </div>
+
+        </div>
+    </div>
+</footer>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.6/pannellum.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const viewer = pannellum.viewer('panorama', {
+            "default": {
+                "firstScene": "cena1",
+                "sceneFadeDuration": 1000,
+                "autoLoad": true,
+                "autoRotate": -2
+            },
+            "scenes": {
+                "cena1": {
+                    
+                    "hfov": 110,
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "equirectangular",
+                    "panorama": "imagens/cena1.jpg",
+                    "hotSpots": []
+                },
+                "cena2": {
+                    "title": "Corredor",
+                    "hfov": 110,
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "equirectangular",
+                    "panorama": "imagens/cena2.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -10,
+                            "yaw": -3,
+                            "type": "scene",
+                            "text": "Ir para Cena 3",
+                            "sceneId": "cena3"
+                        }
+                    ]
+                },
+                "cena3": {
+                    "title": "Corredor",
+                    "hfov": 110,
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "equirectangular",
+                    "panorama": "imagens/cena3.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": -10,
+                            "yaw": 9,
+                            "type": "scene",
+                            "text": "Ir para Cena 4",
+                            "sceneId": "cena4"
+                        }
+                    ]
+                },
+                "cena4": {
+                    "title": "Sala",
+                    "hfov": 110,
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "equirectangular",
+                    "panorama": "imagens/cena4.jpg",
+                    "hotSpots": [
+                        {
+                            "pitch": 0,
+                            "yaw": 140,
+                            "type": "scene",
+                            "text": "Voltar para Cena 1",
+                            "sceneId": "cena1"
+                        }
+                    ]
+                }
+            }
+        });
+        function nextScene() {
+            const currentScene = viewer.getScene();
+            const scenes = Object.keys(viewer.getConfig().scenes);
+            const currentIndex = scenes.indexOf(currentScene);
+            const nextIndex = (currentIndex + 1) % scenes.length;
+            viewer.loadScene(scenes[nextIndex]);
+        }
+
+        // Função para navegar para a cena anterior
+        function prevScene() {
+            const currentScene = viewer.getScene();
+            const scenes = Object.keys(viewer.getConfig().scenes);
+            const currentIndex = scenes.indexOf(currentScene);
+            const prevIndex = (currentIndex - 1 + scenes.length) % scenes.length;
+            viewer.loadScene(scenes[prevIndex]);
+        }
+
+        // Adicionar eventos aos botões de navegação
+        document.getElementById('prev-scene').addEventListener('click', prevScene);
+        document.getElementById('next-scene').addEventListener('click', nextScene);
+
+        // Tratamento de erros
+        viewer.on('error', function (error) {
+            console.error('Erro ao carregar o tour virtual:', error);
+            alert('Erro ao carregar o tour virtual. Verifique o console para mais detalhes.');
+        });
+        // Função para iniciar o tour
+document.getElementById('start-tour').addEventListener('click', function (event) {
+    event.preventDefault(); // Previne o comportamento padrão do link
+
+    // Inicializa o Pannellum com os hotspots
+    if (!viewer) {
+        viewer = pannellum.viewer('panorama', {
+            ...initialConfig,
+            "scenes": {
+                ...initialConfig.scenes,
+                "cena1": {
+                    ...initialConfig.scenes.cena1,
+                    "hotSpots": [
+                        {
+                            "pitch": -8,
+                            "yaw": 0,
+                            "type": "scene",
+                            "text": "Ir para Cena 2",
+                            "sceneId": "cena2"
+                        }
+                    ]
+                }
+            }
+        });
+
+        // Esconde o botão "Iniciar Tour Virtual"
+        this.style.display = 'none';
+    }
+});
+    });
+</script>
+    
+</body>
+</html>
