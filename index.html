@@ -67,8 +67,9 @@ h1 {
 
 @media (max-width: 480px) {
     header#secao1 .slogan {
-        margin-top: 20px !important;
-        font-size: 1.4em ;
+        margin-top: -20px !important;
+        font-size: 1.3em ;
+        padding-bottom: 30px;
     }
 }
 
@@ -277,6 +278,7 @@ header#secao1 .info-container span {
 /* Localização */
 #localizacao {
     padding: 40px 20px;
+    padding-bottom: 20px;
     background-color: #b9ad96;
     text-align: center;
 }
@@ -332,10 +334,17 @@ footer {
 /* Estilo do container principal */
 .footer-container {
     display: flex;
-    justify-content: space-between; /* Distribui os itens uniformemente */
+    justify-content: space-between; 
     align-items: center; /* Alinha verticalmente */
-    gap: 30px; /* Espaçamento entre os elementos */
-    flex-wrap: wrap; /* Permite quebrar linhas em telas menores */
+    gap: 30px; 
+    flex-wrap: wrap;  
+} 
+.top-text {
+    text-align: left; /* Alinha o texto à esquerda */
+    margin-top: -100px; /* Espaçamento na parte superior */
+    font-size: 8px; /* Tamanho da fonte */
+    margin-left: -350px;
+    color: #333; /* Cor do texto (ajuste conforme necessário) */
 }
 
 /* Estilo para cada bloco de logo */
@@ -392,6 +401,15 @@ footer {
         text-align: center; /* Centraliza o texto */
         padding: 10px;
     }
+    .top-text {
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   margin-left: 25px;
+    margin-top: -10px; /* Espaçamento na parte superior */
+    font-size: 10px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto (ajuste conforme necessário) */
+}
 
     .logo,
     .logo-middle,
@@ -406,6 +424,9 @@ footer {
     .logoimobiliária img {
         max-width: 180px; /* Reduz o tamanho das imagens no mobile */
     }
+    .contact-text strong {
+    color: #2c2c2c;
+}
 }
 /* Estilização do botão flutuante */
 .whatsapp-float {
@@ -459,9 +480,9 @@ footer {
 /* Estilo para dispositivos móveis */
 @media (max-width: 768px) {
     .whatsapp-button {
-        font-size: 24px; /* Reduz o tamanho do ícone no mobile */
-        width: 40px; /* Reduz a largura do botão */
-        height: 45px; /* Reduz a altura do botão */
+        font-size: 48px; /* Reduz o tamanho do ícone no mobile */
+       
+        border-radius: 50%;
     }
 
     .whatsapp-text {
@@ -508,16 +529,18 @@ footer {
 
 /* Container de informações */
 .info-container {
+    font-size: 0.9em !important;
     display: flex;
-    gap: 10px !important; /* Espaçamento entre os itens */
-    margin-top: -10px;
+    gap: 15px !important; /* Espaçamento entre os itens */
+    margin-top: -30px !important;
+    align-items: center;
     flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
     justify-content: flex-start;/* Centraliza os itens */
 }
 
 /* Estilização dos spans */
 .info-container span {
-    font-size: 0.5em;
+    
     text-align: right;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     margin: 0; /* Remove margens padrão */
@@ -683,7 +706,9 @@ footer {
 <!-- Footer -->
 <footer id="contato">
     <div class="footer-container">
-        <!-- Logo da Empresa -->
+        <div class="top-text">
+            <p>Construção e Incorporação:</p>
+        </div>
         <div class="logo">
             <img src="imagens/logogj1.png" alt="Logo da Empresa">
         </div>
@@ -695,7 +720,6 @@ footer {
 
         <!-- Logo da Imobiliária -->
         <div class="logoimobiliária">
-            <p>Aluguéis:</p>
             <img src="imagens/LOGOMARCA COLORIDA (1).png" alt="Logo da imobiliária">
             <!-- Texto com os números de telefone -->
             <div class="contact-text">
