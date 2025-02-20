@@ -10,12 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <style>
         /* Estilos globais */
-* {
+        * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -25,28 +24,37 @@ body {
     width: 100%;
     overflow-x: hidden;
 }
-.logo1 {
-    width: 700px; /* Ajuste o tamanho conforme necessário */
+
+#mini-header {
+    background-color: #4b5b58; /* Verde musgo */
+    height: 120px; /* Altura ajustável */
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    padding: 0px 20px; /* Espaçamento lateral */
+    position: relative;
+}
+
+img.mini-logo {
+    width: 500px; /* Tamanho da logo */
     height: auto; /* Mantém a proporção */
-    margin-top: -200px;
+    position: relative;
+    padding-top: 40px;
+}
+.mini-logo img {
+    width: 500px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção */
     filter: brightness(10.0);
+   margin-top: 500px;
 }
 
 @media (max-width: 768px) {
-    .logo1 {
-        width: 200px; 
-        
+    img.mini-logo {
+        width: 350px;
+        margin-top: -100px;
     }
 }
-
-@media (max-width: 480px) {
-    .logo1 {
-        width: 500px; /* Reduz ainda mais para celulares */
-        margin-top:-130px;
-        margin-bottom: 50px;
-    }
-}
-
 h1 {
     font-family: 'Poiret One', cursive; /* Fonte principal */
     font-size: 4em;
@@ -58,21 +66,21 @@ h1 {
     font-family: 'Poiret One', cursive;
     font-size: 2.5em; /* Tamanho menor para caber mais texto */
     color: #ffffff;
-    margin-bottom: 20px;
-    text-shadow:2px 2px 6px rgba(0, 0, 0, 1.0);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 1.0);
     line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+    position: relative;
+    z-index: 5; /* Garante que o slogan fique acima de outros elementos */
 }
-
-
 
 @media (max-width: 480px) {
-    header#secao1 .slogan {
-        margin-top: -20px !important;
-        font-size: 1.3em ;
-        padding-bottom: 30px;
+.slogan {
+    font-size: 18px !important;
+        margin-top: -100px;
+        padding: 30px 20px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+         
     }
 }
-
  h2, h3 {
     font-family: 'Poiret One', cursive;
 }
@@ -389,7 +397,7 @@ footer {
 }
 
 .contact-text strong {
-    color: #6b6a6a; /* Destaca os números de telefone */
+    color: #005511; /* Destaca os números de telefone */
 }
 
 /* MEDIA QUERIES PARA RESPONSIVIDADE */
@@ -425,7 +433,7 @@ footer {
         max-width: 180px; /* Reduz o tamanho das imagens no mobile */
     }
     .contact-text strong {
-    color: #2c2c2c;
+    color: #005511;
 }
 }
 /* Estilização do botão flutuante */
@@ -521,7 +529,7 @@ footer {
         text-align: center;
     }
     header#secao1 .info-container{
-        margin-top:10px;
+        margin-top: 50px;
         
     }
    
@@ -532,7 +540,7 @@ footer {
     font-size: 0.9em !important;
     display: flex;
     gap: 15px !important; /* Espaçamento entre os itens */
-    margin-top: -30px !important;
+    margin-top: 10px !important;
     align-items: center;
     flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
     justify-content: flex-start;/* Centraliza os itens */
@@ -574,20 +582,6 @@ footer {
 #localizacao, h3 {
         padding: 10px;
     }
-#mini-header {
-    background-color: #4b5b58; /* Verde musgo */
-    height: 130px; /* Altura ajustável */
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    padding: 0 20px; /* Espaçamento lateral */
-}
-
-.mini-logo {
-    width: 500px; /* Tamanho da logo */
-    height: auto; /* Mantém a proporção */
-}
-/* Estilo para o título das cenas */
 .nav-button {
         position: absolute;
         top: 50%;
@@ -632,10 +626,10 @@ footer {
 <body>
     <div id="mini-header">
         <img src="imagens/logo1.png" alt="Galeria Jardins" class="mini-logo">
+        <p class="slogan">O lugar ideal para o seu negócio!</p>
     </div>
     <header id="secao1">
         <div class="overlay"></div> <!-- Camada semi-transparente -->
-        <p class="slogan">O lugar ideal para o seu negócio!</p>
         <div class="info-container">
             <div>
                 <i class="fas fa-map-marker-alt"></i>
@@ -655,7 +649,7 @@ footer {
             </div>
             <div>
                 <i class="fas fa-layer-group"></i>
-                <span>Mezanino incluso</span>
+                <span>Estrutura com Mezanino</span>
             </div>
             <div>
                 <i class="fas fa-solar-panel"></i> <!-- Ou fa-bolt -->
