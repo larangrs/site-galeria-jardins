@@ -183,7 +183,7 @@ header#secao1 p {
     
 }
 
-header#secao1 .info-container {
+ header#secao1 .info-container {
     display: flex;
     gap: 40px;
     margin-top: 100px;
@@ -206,7 +206,8 @@ header#secao1 .info-container span {
     font-size: 1.2em;
     color: #ffffff;
     
-}
+} 
+
 
 /* Tour Virtual */
 #tour {
@@ -299,7 +300,9 @@ header#secao1 .info-container span {
     text-decoration: none;
     font-size: 0.9em;
 }
-
+#localizacao h3{
+    margin-top: -20px;
+}
 /* Contato */
 
 /* Estilização geral do footer */
@@ -319,13 +322,32 @@ footer {
 }
 
 /* Estilização dos logos */
-.logo,
-.logoimobiliária {
-    text-align: center; /* Centraliza os itens dentro de cada bloco */
-    flex: 1; /* As logos ocupam metade do espaço disponível */
-    max-width: 50%; /* Limita a largura máxima de cada logo */
+/* Estilo do footer */
+#contato {
+    background-color: #ffffff; /* Cor de fundo do footer */
+    padding: 20px 0; /* Espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
 }
 
+/* Estilo do container principal */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Distribui os itens uniformemente */
+    align-items: center; /* Alinha verticalmente */
+    gap: 30px; /* Espaçamento entre os elementos */
+    flex-wrap: wrap; /* Permite quebrar linhas em telas menores */
+}
+
+/* Estilo para cada bloco de logo */
+.logo,
+.logo-middle,
+.logoimobiliária {
+    text-align: center; /* Centraliza os itens dentro de cada bloco */
+    flex: 1; /* As logos ocupam espaço igual */
+    max-width: 30%; /* Limita a largura máxima de cada logo */
+}
+
+/* Estilo para as imagens das logos */
 .logo img,
 .logoimobiliária img {
     max-width: 250px; /* Tamanho máximo das imagens */
@@ -333,34 +355,54 @@ footer {
     margin: 0 auto; /* Centraliza as imagens horizontalmente */
     display: block; /* Remove espaçamento abaixo da imagem */
 }
+.logo-middle img{
+    max-width: 200px; /* Tamanho máximo das imagens */
+    height: auto; /* Mantém a proporção */
+    margin: 0 auto; /* Centraliza as imagens horizontalmente */
+    display: block; /* Remove espaçamento abaixo da imagem */
 
+}
+/* Estilo para o texto acima da logo da imobiliária */
 .logoimobiliária p {
     font-size: 12px; /* Tamanho reduzido para o texto acima da logo */
     margin-bottom: 5px;
 }
 
-/* MEDIA QUERIES PARA RESPONSIVIDADE */
+/* Estilo para o texto de contato */
+.contact-text {
+    margin-top: 10px; /* Espaço acima do texto */
+    font-size: 12px; /* Tamanho reduzido para o texto de contato */
+    color: #555; /* Cor do texto */
+}
 
+.contact-text p {
+    margin: 5px 0; /* Espaçamento entre os parágrafos */
+}
+
+.contact-text strong {
+    color: #6b6a6a; /* Destaca os números de telefone */
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
 /* Tablets e celulares (largura de tela até 768px) */
 @media (max-width: 768px) {
     .footer-container {
-        flex-direction: row; /* Empilha os itens verticalmente */
-        align-items: center;
+        flex-direction: column; /* Empilha os itens verticalmente */
+        align-items: center; /* Centraliza os itens */
         text-align: center; /* Centraliza o texto */
-        justify-content: space-between;
         padding: 10px;
-        
     }
 
     .logo,
+    .logo-middle,
     .logoimobiliária {
         flex: none; /* Desativa o crescimento automático */
-        margin-bottom: 50px; /* Adiciona espaçamento entre as logos */
-        margin-top: -20px;
-
+        margin-bottom: 20px; /* Adiciona espaçamento entre as logos */
+        max-width: 100%; /* Ocupa toda a largura disponível */
     }
 
     .logo img,
+    .logo-middle img,
     .logoimobiliária img {
         max-width: 180px; /* Reduz o tamanho das imagens no mobile */
     }
@@ -379,9 +421,9 @@ footer {
     background-color: #25D366; /* Cor do botão do WhatsApp */
     color: white; /* Cor do texto */
     text-decoration: none; /* Remove sublinhado do link */
-    padding: 10px; /* Reduz o espaçamento interno ao redor do ícone */
+    padding: 40px; /* Reduz o espaçamento interno ao redor do ícone */
     border-radius: 50%; /* Torna o botão circular */
-    font-size: 42px; /* Aumenta o tamanho do ícone */
+    font-size: 52px; /* Aumenta o tamanho do ícone */
     transition: all 0.3s ease; /* Adiciona animação suave */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o botão */
     width: 50px; /* Define uma largura fixa para o botão */
@@ -467,15 +509,15 @@ footer {
 /* Container de informações */
 .info-container {
     display: flex;
-    gap: 15px !important; /* Espaçamento entre os itens */
-    
+    gap: 10px !important; /* Espaçamento entre os itens */
+    margin-top: -10px;
     flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
     justify-content: flex-start;/* Centraliza os itens */
 }
 
 /* Estilização dos spans */
 .info-container span {
-    font-size: 1em;
+    font-size: 0.5em;
     text-align: right;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     margin: 0; /* Remove margens padrão */
@@ -592,6 +634,10 @@ footer {
                 <i class="fas fa-layer-group"></i>
                 <span>Mezanino incluso</span>
             </div>
+            <div>
+                <i class="fas fa-solar-panel"></i> <!-- Ou fa-bolt -->
+                <span>Energia Solar integrada</span>
+            </div>
         </div>
     </header>
     </header>
@@ -642,12 +688,20 @@ footer {
             <img src="imagens/logogj1.png" alt="Logo da Empresa">
         </div>
 
+        <!-- Nova Logo no Meio -->
+        <div class="logo-middle">
+            <img src="imagens/logonemp .png" alt="Nova Logo">
+        </div>
+
         <!-- Logo da Imobiliária -->
         <div class="logoimobiliária">
             <p>Aluguéis:</p>
             <img src="imagens/LOGOMARCA COLORIDA (1).png" alt="Logo da imobiliária">
-        </div>
-
+            <!-- Texto com os números de telefone -->
+            <div class="contact-text">
+                <p>Entre em contato pelo nosso WhatsApp no botão ao lado:</p>
+                <p><strong>84 99119-8600 | 84 98884-0002</strong></p>
+            </div>
         </div>
     </div>
 </footer>
