@@ -43,7 +43,6 @@ O principal objetivo deste projeto foi **integrar todas as minhas habilidades ap
 
 ## 📩 Contato
 Caso queira saber mais sobre o projeto ou entrar em contato comigo:
-## 📩 Contato  
 - [LinkedIn](https://www.linkedin.com/in/laranegreiros/)  
 - [GitHub](https://github.com/larangrs)  
 
