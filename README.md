@@ -39,7 +39,7 @@ Este projeto representa a integração de diversas áreas do meu conhecimento, u
 O principal objetivo deste projeto foi **integrar todas as minhas habilidades aprendidas até o momento**, criando um site que apresenta de forma imersiva e interativa um empreendimento imobiliário.
 
 ## 📷 Demonstração
-![Galeria Jardins](image.png)
+![Galeria Jardins](printsite.png)
 
 ## 📩 Contato
 Caso queira saber mais sobre o projeto ou entrar em contato comigo:
