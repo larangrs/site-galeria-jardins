@@ -43,9 +43,9 @@ O principal objetivo deste projeto foi **integrar todas as minhas habilidades ap
 
 ## 📩 Contato
 Caso queira saber mais sobre o projeto ou entrar em contato comigo:
-- LinkedIn: linkedin.com/in/laranegreiros
-
-- GitHub: github.com/larangrs
+## 📩 Contato  
+- [LinkedIn](https://www.linkedin.com/in/laranegreiros/)  
+- [GitHub](https://github.com/larangrs)  
 
 ---
 Este projeto é um grande marco na minha jornada profissional, unindo arquitetura e tecnologia para criar experiências inovadoras! ✨
