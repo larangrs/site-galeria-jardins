@@ -17,7 +17,7 @@ Este projeto representa a integração de diversas áreas do meu conhecimento, u
 ### 🌐 Desenvolvimento do Site
 - Website criado do zero, utilizando **HTML, CSS e JavaScript**.
 - Integração do **tour virtual no site**.
-- **Acesse o site:** [Galeria Jardins](https://qrco.de/bflt8t)
+- **Acesse o site:** [Galeria Jardins](https://galeriajardins.com.br)
 
 ### 📌 Identidade Visual e Divulgação
 - **Logomarca** desenvolvida no **Brandmark**.
