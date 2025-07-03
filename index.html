@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria Jardins</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.6/pannellum.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.6/pannellum.css " />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css ">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href=" https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --space-xxs: 4px;
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-xxl: 64px;
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -25,146 +30,37 @@
             color: #333;
             width: 100%;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
+        /* Mini-header */
         #mini-header {
             background-color: #4b5b58;
-
-            height: 120px;
-
+            padding: var(--space-md) 0;
+            height: 150px;
             display: flex;
-            flex-direction: column;
-
             justify-content: center;
-
             align-items: center;
-
-            padding: 0px 20px;
-
-            position: relative;
         }
-
         img.mini-logo {
-            width: 500px;
-
+            width: min(500px, 90%);
             height: auto;
-
-            position: relative;
-            padding-top: 40px;
         }
 
-        .mini-logo img {
-            width: 500px;
-
-            height: auto;
-
-            filter: brightness(10.0);
-            margin-top: 500px;
-        }
-
-        @media (max-width: 768px) {
-            img.mini-logo {
-                width: 350px;
-                margin-top: -100px;
-            }
-        }
-
-        @media (max-width: 1440px) and (min-width: 1024px) {
-            img.mini-logo {
-                margin-top: -30px;
-            }
-        }
-
-        h1 {
-            font-family: 'Poiret One', cursive;
-
-            font-size: 4em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .slogan {
-            font-family: 'Poiret One', cursive;
-            font-size: clamp(18px, 6vw, 32px);
-            text-align: center;
-            color: #ffffff;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 1.0);
-            line-height: 1.6;
-            position: relative;
-            z-index: 5;
-
-        }
-
-        @media (max-width: 480px) {
-            .slogan {
-                font-size: 18px;
-                margin-top: -100px;
-                padding: 30px 20px;
-                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-
-            }
-        }
-
-        @media (max-width: 768px) {
-            .slogan {
-                font-size: 18px;
-
-            }
-        }
-
-        @media (max-width: 1440px) and (min-width: 1024px) {
-            .slogan {
-                font-size: 36px;
-
-            }
-        }
-
-        h2,
-        h3 {
-            font-family: 'Poiret One', cursive;
-        }
-
-        h1 {
-            font-size: 3.8em;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            font-size: 1.4em;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-
-
-        p {
-            font-size: 2em;
-            line-height: 1.6;
-        }
-
-
-
+        /* Header principal */
         header#secao1 {
             position: relative;
             height: 400px;
-
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: var(--space-md);
             width: 100%;
             overflow: hidden;
-
         }
-
-
         header#secao1 .overlay {
             position: absolute;
             top: 0;
@@ -172,11 +68,8 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.4);
-
             z-index: 1;
         }
-
-
         header#secao1::before {
             content: '';
             position: absolute;
@@ -186,149 +79,97 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            background-color: #4b5b58;
             z-index: -1;
             animation: slideBackground 15s infinite ease-in-out;
         }
-
-
         @keyframes slideBackground {
-            0% {
-                background-image: url('imagens/02.jpg');
-            }
-
-            25% {
-                background-image: url('imagens/image11.jpg');
-            }
-
-            50% {
-                background-image: url('imagens/image8.jpg');
-            }
-
-            75% {
-                background-image: url('imagens/image16.jpg');
-            }
-
-            100% {
-                background-image: url('imagens/Image17.jpg');
-            }
+            0% { background-image: url('imagens/02.jpg'); }
+            25% { background-image: url('imagens/image11.jpg'); }
+            50% { background-image: url('imagens/image8.jpg'); }
+            75% { background-image: url('imagens/image16.jpg'); }
+            100% { background-image: url('imagens/Image17.jpg'); }
         }
-
-        @media (max-width: 768px) {
-            header#secao1 {
-                height: 300px;
-
-            }
-
-            header#secao1::before {
-                background-size: cover;
-
-                background-position: center;
-            }
-        }
-
-        header#secao1 h1,
-        header#secao1 p,
-        header#secao1 .info-container {
-            position: relative;
+        .slogan {
+            font-family: 'Poiret One', cursive;
+            font-size: clamp(18px, 6vw, 32px);
+            color: #ffffff;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 1.0);
+            margin-bottom: var(--space-xl);
             z-index: 2;
-
+            position: relative;
+            padding: 0 var(--space-md);
         }
 
-        header#secao1 h1,
-        header#secao1 p {
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
-
-        }
-
-        header#secao1 .info-container {
+        /* Informações com ícones */
+        .info-container {
             display: flex;
-            gap: 40px;
-            margin-top: 100px;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
             flex-wrap: wrap;
-
+            justify-content: center;
+            padding: 0 var(--space-md);
         }
-
-        header#secao1 .info-container div {
+        .info-container div {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: var(--space-xs);
+             background-color: transparent;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 8px;
         }
-
-        header#secao1 .info-container i {
-            font-size: 1.5em;
-            color: #ffffff;
-        }
-
-        header#secao1 .info-container span {
+        .info-container i {
             font-size: 1.2em;
             color: #ffffff;
-
+            z-index: 5;
+        }
+        .info-container span {
+            z-index: 5;
+            font-size: 1.2em;
+            color: #ffffff; 
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
         }
 
-
-        @media (max-width: 1440px) and (min-width: 1024px) {
-            .slogan {
-                margin-top: -50px;
-            }
-
-            header#secao1 .info-container {
-                display: grid;
-             
-                grid-template-columns: repeat(3, 1fr);
-
-                gap: 30px;
-
-                justify-content: center;
-
-                margin-top: 100px;
-
-            }
-
-            header#secao1 .info-container div {
-                gap: 8px;
-
-            }
-
-            header#secao1 .info-container i {
-                font-size: 1.4em;
-
-            }
-
-            header#secao1 .info-container span {
-                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
-                font-size: 1.4em;
-                
-
-            }
+        h1, h2, h3 {
+            font-family: 'Poiret One', cursive;
         }
+        p {
+            font-size: 1.1em;
+        }
+        h2 {
+            color: white;
+            font-size: 28px;
+            padding: 10px;
+            margin-top: -10px;
+        }
+        h3 {
+            color: white;
+            font-size: 24px;
+            padding: 10px;
 
-
-
+        }
+        
+        /* Tour Virtual */
         #tour {
-            padding: 40px 20px;
+            padding: var(--space-xl) var(--space-md);
             background-color: #4b5b58;
             text-align: center;
         }
-
         .tour-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: var(--space-lg);
         }
-
         #panorama {
             width: 100%;
-            height: 550px;
+            height: 650px;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
         .expand-tour-button {
             display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
+            margin-top: var(--space-md);
+            padding: var(--space-sm) var(--space-lg);
             background-color: #738679;
             color: white;
             text-decoration: none;
@@ -336,440 +177,171 @@
             font-size: 1em;
             transition: background-color 0.3s ease;
         }
-
         .expand-tour-button:hover {
             background-color: #128C7E;
         }
 
-
+        /* Planta */
         #planta-container {
             text-align: center;
-            margin-top: 20px;
+            margin-top: var(--space-md);
         }
-
-        #planta-container a {
-            display: inline-block;
-            text-decoration: none;
-        }
-
         #planta {
             max-width: 100%;
             max-height: 300px;
             border-radius: 8px;
             transition: transform 0.3s ease;
         }
-
         #planta:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
-
         .planta-texto {
-            font-size: 0.8em;
+            font-size: 0.9em;
             color: #ffffff;
-            margin-top: 10px;
+            margin-top: var(--space-sm);
         }
 
-
+        /* Localização */
         #localizacao {
-            padding: 40px 20px;
-            padding-bottom: 20px;
+            padding: var(--space-xl) var(--space-md);
             background-color: #b9ad96;
             text-align: center;
         }
-
         #localizacao img {
             width: 100%;
             max-width: 900px;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: var(--space-sm);
         }
-
         #localizacao a {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            display: inline-block;
             background: rgba(0, 0, 0, 0.7);
             color: white;
-            padding: 5px 10px;
+            padding: var(--space-xs) var(--space-sm);
             border-radius: 5px;
             text-decoration: none;
             font-size: 0.9em;
+            margin-top: var(--space-xs);
         }
 
-        #localizacao h3 {
-            margin-top: -20px;
-        }
-
-
-
-
+        /* Footer */
         footer {
             background-color: #ffffff;
-
-            padding: 20px 0;
-
-        }
-
-        .footer-container {
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            max-width: 1200px;
-
-            margin: 0 auto;
-
-            padding: 0 20px;
-
-            flex-wrap: wrap;
-
-        }
-
-
-
-        #contato {
-            background-color: #ffffff;
-
-            padding: 20px 0;
-
+            padding: var(--space-xl) var(--space-md);
             text-align: center;
-
         }
-
-
-        .footer-container {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .top-text {
-            position: absolute;
-
-            top: -10px;
-
-            left: -10px;
-
-            text-align: left;
-            margin: 0;
-            font-size: 8px;
-            color: #333;
-        }
-
-
-
-        .logo,
-        .logo-middle,
-        .logoimobiliária {
-            text-align: center;
-
-            flex: 1;
-
-            max-width: 30%;
-
-        }
-
-
-        .logo img,
-        .logoimobiliária img {
-            max-width: 250px;
-
-            height: auto;
-
-            margin: 0 auto;
-
-            display: block;
-
-        }
-
-        .logo-middle img {
-            max-width: 200px;
-
-            height: auto;
-
-            margin: 0 auto;
-
-            display: block;
-
-
-        }
-
-
-        .logoimobiliária p {
-            font-size: 12px;
-
-            margin-bottom: 5px;
-        }
-
-
-        .contact-text {
-            margin-top: 10px;
-
-            font-size: 12px;
-
+        .footer-header {
+            margin-bottom: var(--space-lg);
+            font-size: 14px;
             color: #555;
-
         }
-
-        .contact-text p {
-            margin: 5px 0;
-
-        }
-
-        .contact-text strong {
-            color: #005511;
-
-        }
-
-
-
-        @media (max-width: 768px) {
-            .footer-container {
-                flex-direction: column;
-
-                align-items: center;
-
-                text-align: center;
-
-                padding: 10px;
-            }
-
-            .top-text {
-                text-align: center;
-                align-items: center;
-                justify-content: center;
-                margin-left: 25px;
-                margin-top: -10px;
-
-                font-size: 10px;
-
-                color: #333;
-
-            }
-
-            .logo,
-            .logo-middle,
-            .logoimobiliária {
-                flex: none;
-
-                margin-bottom: 20px;
-
-                max-width: 100%;
-
-            }
-
-            .logo img,
-            .logo-middle img,
-            .logoimobiliária img {
-                max-width: 180px;
-
-            }
-
-            .contact-text strong {
-                color: #005511;
-            }
-        }
-
-
-        @media (max-width: 1440px) and (min-width: 1024px) {
-            .footer-container {
-                justify-content: flex-start;
-                gap: 15px;
-                padding: 10px;
-            }
-
-
-        }
-
-
-        .whatsapp-float {
-            position: fixed;
-
-            bottom: 20px;
-
-            right: 20px;
-
-            z-index: 1000;
-
-        }
-
-        .whatsapp-button {
+        .footer-logos {
             display: flex;
-
-            align-items: center;
-
-            background-color: #25D366;
-
-            color: white;
-
-            text-decoration: none;
-
-            padding: 40px;
-
-            border-radius: 50%;
-
-            font-size: 52px;
-
-            transition: all 0.3s ease;
-
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-            width: 50px;
-
-            height: 50px;
-
             justify-content: center;
-
+            flex-wrap: wrap;
+            gap: var(--space-xl);
+            margin-bottom: var(--space-lg);
         }
-
-        .whatsapp-button i {
-            margin: 0;
-
+        .logo-container {
+            text-align: center;
+            flex: 1 1 200px;
+            max-width: 300px;
+            padding: 0 var(--space-md);
         }
-
-        .whatsapp-text {
-            display: none;
-
-            position: absolute;
-
-            bottom: 60px;
-
-            right: 0;
-
-            background-color: #25D366;
-
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: var(--space-xs);
+        }
+        .logo-container p {
+            font-size: 14px;
+            color: #555;
+            margin: var(--space-xs) 0;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #738679;
             color: white;
-
-            padding: 8px 12px;
-
-            border-radius: 5px;
-
-            font-size: 12px;
-
-            white-space: nowrap;
-
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
+            text-decoration: none;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: 50px;
+            font-size: 14px;
             transition: all 0.3s ease;
-
+        }
+        .social-button i {
+            margin-right: var(--space-xs);
+            font-size: 18px;
+        }
+        .social-button:hover {
+            background-color: #5a6d60;
+            transform: translateY(-2px);
         }
 
+        /* Botões flutuantes */
+        .whatsapp-float, .instagram-float {
+            position: fixed;
+            right: var(--space-lg);
+            z-index: 1000;
+        }
+        .whatsapp-float {
+            bottom: var(--space-lg);
+        }
+        .instagram-float {
+            bottom: calc(var(--space-lg) + 70px);
+        }
+        .whatsapp-button, .instagram-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+        }
+        .instagram-button {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
 
+        /* Textos dos botões flutuantes */
+        .whatsapp-text, .instagram-text {
+            display: none;
+            position: absolute;
+            bottom: 70px;
+            right: -10px;
+            color: white;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .whatsapp-text {
+            background-color: #25D366;
+        }
+        .instagram-text {
+            background: #dc2743;
+        }
         .whatsapp-button:hover .whatsapp-text,
-        .whatsapp-button:focus .whatsapp-text {
+        .instagram-button:hover .instagram-text {
             display: block;
-
         }
 
-
-        @media (max-width: 768px) {
-            .whatsapp-button {
-                font-size: 48px;
-
-
-                border-radius: 50%;
-            }
-
-            .whatsapp-text {
-                font-size: 12px;
-
-                padding: 6px 10px;
-
-            }
-        }
-
-
-        @media (max-width: 768px) {
-            .whatsapp-button {
-                font-size: 38px;
-
-                padding: 8px 12px;
-
-            }
-        }
-
-
-
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-
-            h2 {
-                font-size: 1em;
-            }
-
-            p {
-                font-size: 1.2em;
-            }
-
-            header#secao1 .info-container span {
-                font-size: 1em;
-                align-items: center;
-                text-align: center;
-                background-color: rgba(0, 0, 0, 0.3);
-                padding: 5px 5px; 
-                border-radius: 5px;
-            }
-
-            header#secao1 .info-container {
-                margin-top: 50px;
-
-            }
-
-
-
-
-            .info-container {
-                font-size: 0.9em !important;
-                display: flex;
-                gap: 15px !important;
-
-                margin-top: 10px !important;
-                align-items: center;
-                flex-wrap: wrap;
-
-                justify-content: flex-start;
-
-            }
-
-
-
-            #panorama {
-                height: 250px;
-            }
-
-            #planta {
-                max-height: 150px;
-            }
-
-            .expand-tour-button {
-                font-size: 0.9em;
-                padding: 8px 16px;
-            }
-
-
-
-            header#secao1,
-            #tour,
-            #localizacao {
-                padding: 20px;
-            }
-        }
-
-        #localizacao,
-        h3 {
-            padding: 10px;
-        }
-
+        /* Navegação tour virtual */
         .nav-button {
             position: absolute;
             top: 50%;
@@ -789,80 +361,126 @@
             justify-content: center;
             transition: background-color 0.3s ease;
         }
-
-        .nav-button:hover {
-            background-color: rgba(66, 65, 65, 0.226);
-        }
-
         .nav-left {
-            left: 10px;
+            left: var(--space-sm);
         }
-
         .nav-right {
-            right: 10px;
+            right: var(--space-sm);
         }
 
-        @media (max-width: 768px) {
-            .nav-button {
-                width: 20px;
+        /* Media Query Mobile */
+/* Media Query para telas maiores que 480px e menores ou iguais a 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Mini-header */
+    #mini-header {
+        padding: var(--space-md);
+    }
 
-                height: 50px;
+    img.mini-logo {
+        width: 90%;
+        max-width: 400px;
+    }
+    h2{
+        font-size:1.3rem ;
+    }
+    /* Slogan */
+    .slogan {
+        font-size: 1.5rem; /* Tamanho maior para telas maiores */
+        margin-bottom: -30px;
+        padding: 0 var(--space-md);
+    }
 
-                font-size: 18px;
+    /* Info Container */
+    .info-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap; 
+    }
 
-            }
-        }
+    .info-container div {
+        background-color: transparent; 
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .info-container i {
+        font-size: 1.3em;
+    }
+
+    .info-container span {
+        font-size: 1em;
+        color: #ffffff;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 1.5);
+        
+    }
+
+    /* Tour Virtual */
+    #panorama {
+        height: 400px; /* Aumenta a altura do panorama */
+    }
+
+    /* Planta */
+    #planta {
+        max-height: 300px; /* Aumenta a altura da planta */
+    }
+
+    /* Localização */
+    #localizacao h2,
+    #localizacao h3 {
+        font-size: 1.5em; /* Aumenta o tamanho dos títulos */
+    }
+
+    #localizacao img {
+        max-width: 100%; /* Garante que a imagem ocupe toda a largura */
+    }
+
+    /* Footer */
+    footer .footer-logos {
+        gap: var(--space-lg); /* Aumenta o espaçamento entre logos */
+    }
+
+    .logo-container {
+        min-width: 150px;
+        flex: 1 1 150px;
+    }
+
+    .social-button {
+        font-size: 14px;
+        padding: var(--space-sm) var(--space-lg);
+    }
+}
     </style>
-   
 </head>
-
 <body>
+    <!-- Mini-header -->
     <div id="mini-header">
         <img src="imagens/logo1.png" alt="Galeria Jardins" class="mini-logo">
-        <p class="slogan">O lugar ideal para o seu negócio!</p>
     </div>
+
+    <!-- Header Principal -->
     <header id="secao1">
         <div class="overlay"></div>
+        <p class="slogan">O lugar ideal para o seu negócio!</p>
         <div class="info-container">
-            <div>
-                <i class="fas fa-map-marker-alt"></i>
-                <span>No coração do Alto de São Manoel</span>
-            </div>
-            <div>
-                <i class="fas fa-parking"></i>
-                <span>Estacionamento Privativo</span>
-            </div>
-            <div>
-                <i class="fas fa-ruler-combined"></i>
-                <span>Área total por sala: aprox. 30m²</span>
-            </div>
-            <div>
-                <i class="fas fa-toilet"></i>
-                <span>Banheiro privativo e acessível</span>
-            </div>
-            <div>
-                <i class="fas fa-layer-group"></i>
-                <span>Estrutura com Mezanino</span>
-            </div>
-            <div>
-                <i class="fas fa-solar-panel"></i>
-                <span>Energia Solar integrada</span>
-            </div>
+            <div><i class="fas fa-map-marker-alt"></i><span>No coração do Alto de São Manoel</span></div>
+            <div><i class="fas fa-parking"></i><span>Estacionamento Privativo</span></div>
+            <div><i class="fas fa-ruler-combined"></i><span>Área total por sala: aprox. 30m²</span></div>
+            <div><i class="fas fa-toilet"></i><span>Banheiro privativo e acessível</span></div>
+            <div><i class="fas fa-layer-group"></i><span>Estrutura com Mezanino</span></div>
+            <div><i class="fas fa-solar-panel"></i><span>Energia Solar integrada</span></div>
         </div>
     </header>
-    </header>
 
+    <!-- Tour Virtual -->
     <section id="tour">
-
         <h2>Conheça as instalações em nosso Tour Virtual</h2>
         <div class="tour-container">
             <div id="panorama" style="position: relative;">
                 <button id="prev-scene" class="nav-button nav-left">&#10094;</button>
                 <button id="next-scene" class="nav-button nav-right">&#10095;</button>
             </div>
-
             <a href="tour.html" target="_blank" class="expand-tour-button">Abrir Tour Virtual</a>
-
         </div>
         <div id="planta-container">
             <a href="imagens/plantasala.pdf" target="_blank">
@@ -872,49 +490,61 @@
         </div>
     </section>
 
+    <!-- Localização -->
     <section id="localizacao">
-        <h2>Localização</h2>
-        <h3>Rua Dona Mariinha Mendes 02</h3>
-        <div style="position: relative; text-align: center;">
-            <img src="imagens/mapalocal1.jpg" alt="Mapa da Localização">
-            <a href="https://www.google.com.br/maps/place/Rua+Dona+Mariinha+Mendes,+02+-+Alto+de+S%C3%A3o+Manoel,+Mossor%C3%B3+-+RN,+59631-220/@-5.2093176,-37.3416288,1082m/data=!3m2!1e3!4b1!4m6!3m5!1s0x7ba07acbb4abdf9:0xd9f03d1df28d82f3!8m2!3d-5.2093229!4d-37.3390539!16s%2Fg%2F11wb1ql1_8?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D"
-                target="_blank">Ver no Google Maps</a>
-        </div>
+        <h2>LOCALIZAÇÃO</h2>
+        <h3>Rua Dona Mariinha Mendes, 02</h3>
+        <img src="imagens/mapalocal1.jpg" alt="Mapa da Localização">
+        <br>
+        <a href=" https://www.google.com.br/maps/place/Rua+Dona+Mariinha+Mendes ,+02+-+Alto+de+S%C3%A3o+Manoel,+Mossor%C3%B3+-+RN,+59631-220/@-5.2093176,-37.3416288,1082m/data=!3m2!1e3!4b1!4m6!3m5!1s0x7ba07acbb4abdf9:0xd9f03d1df28d82f3!8m2!3d-5.2093229!4d-37.3390539!16s%2Fg%2F11wb1ql1_8?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank">Ver no Google Maps</a>
     </section>
 
+    <!-- Botões Flutuantes -->
+    <div class="instagram-float">
+        <a href="https://www.instagram.com/galeriajardinsmossoro " target="_blank" class="instagram-button">
+            <i class="fab fa-instagram"></i>
+            <span class="instagram-text">Siga-nos no Instagram</span>
+        </a>
+    </div>
     <div class="whatsapp-float">
-        <a href="https://wa.me/5584988840002" target="_blank" class="whatsapp-button">
+        <a href="https://wa.me/5584988840002 " target="_blank" class="whatsapp-button">
             <i class="fab fa-whatsapp"></i>
             <span class="whatsapp-text">Entre em contato pelo WhatsApp</span>
         </a>
     </div>
 
+    <!-- Rodapé -->
     <footer id="contato">
-        <div class="footer-container">
-            <div class="top-text">
-                <p>Construção e Incorporação:</p>
+        <div class="footer-header">
+            <p>Construção e Incorporação:</p>
+        </div>
+        <div class="footer-logos">
+            <div class="logo-container">
+                <img src="imagens/logogj1.png" alt="Galeria Jardins">
             </div>
-            <div class="logo">
-                <img src="imagens/logogj1.png" alt="Logo da Empresa">
+            <div class="logo-container">
+                <img src="imagens/logonemp .png" alt="Nova Empresa">
             </div>
-
-
-            <div class="logo-middle">
-                <img src="imagens/logonemp .png" alt="Nova Logo">
-            </div>
-
-            <div class="logoimobiliária">
-                <img src="imagens/LOGOMARCA COLORIDA (1).png" alt="Logo da imobiliária">
-
-                <div class="contact-text">
-                    <p>Entre em contato pelo nosso WhatsApp no botão ao lado:</p>
-                    <p><strong>84 99119-8600 | 84 98884-0002</strong></p>
+            <div class="logo-container">
+                <img src="imagens/LOGOMARCA COLORIDA (1).png" alt="Imobiliária">
+                <div class="contact-info">
+                    <p>Entre em contato:</p>
+                    <strong>84 99119-8600 | 84 98884-0002</strong>
                 </div>
             </div>
         </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/galeriajardinsmossoro " target="_blank" class="social-button">
+                <i class="fab fa-instagram"></i> Siga-nos no Instagram
+            </a>
+            <a href="https://wa.me/5584988840002 " target="_blank" class="social-button">
+                <i class="fab fa-whatsapp"></i> Fale pelo WhatsApp
+            </a>
+        </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.6/pannellum.js"></script>
+    <!-- JS Pannellum -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.6/pannellum.js "></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const viewer = pannellum.viewer('panorama', {
@@ -926,7 +556,6 @@
                 },
                 "scenes": {
                     "cena1": {
-
                         "hfov": 110,
                         "pitch": 0,
                         "yaw": 0,
@@ -987,6 +616,7 @@
                     }
                 }
             });
+
             function nextScene() {
                 const currentScene = viewer.getScene();
                 const scenes = Object.keys(viewer.getConfig().scenes);
@@ -995,7 +625,6 @@
                 viewer.loadScene(scenes[nextIndex]);
             }
 
-            // Função para navegar para a cena anterior
             function prevScene() {
                 const currentScene = viewer.getScene();
                 const scenes = Object.keys(viewer.getConfig().scenes);
@@ -1004,47 +633,13 @@
                 viewer.loadScene(scenes[prevIndex]);
             }
 
-            // Adicionar eventos aos botões de navegação
             document.getElementById('prev-scene').addEventListener('click', prevScene);
             document.getElementById('next-scene').addEventListener('click', nextScene);
 
-            // Tratamento de erros
             viewer.on('error', function (error) {
                 console.error('Erro ao carregar o tour virtual:', error);
-                alert('Erro ao carregar o tour virtual. Verifique o console para mais detalhes.');
-            });
-            // Função para iniciar o tour
-            document.getElementById('start-tour').addEventListener('click', function (event) {
-                event.preventDefault(); // Previne o comportamento padrão do link
-
-                // Inicializa o Pannellum com os hotspots
-                if (!viewer) {
-                    viewer = pannellum.viewer('panorama', {
-                        ...initialConfig,
-                        "scenes": {
-                            ...initialConfig.scenes,
-                            "cena1": {
-                                ...initialConfig.scenes.cena1,
-                                "hotSpots": [
-                                    {
-                                        "pitch": -8,
-                                        "yaw": 0,
-                                        "type": "scene",
-                                        "text": "Ir para Cena 2",
-                                        "sceneId": "cena2"
-                                    }
-                                ]
-                            }
-                        }
-                    });
-
-                    // Esconde o botão "Iniciar Tour Virtual"
-                    this.style.display = 'none';
-                }
             });
         });
     </script>
-
 </body>
-
 </html>
