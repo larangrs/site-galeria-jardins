@@ -368,10 +368,7 @@
             right: var(--space-sm);
         }
 
-        /* Media Query Mobile */
-/* Media Query para telas maiores que 480px e menores ou iguais a 768px */
 @media (min-width: 481px) and (max-width: 768px) {
-    /* Mini-header */
     #mini-header {
         padding: var(--space-md);
     }
@@ -380,27 +377,30 @@
         width: 90%;
         max-width: 400px;
     }
-    h2{
-        font-size:1.3rem ;
+
+    h2 {
+        font-size: 1.3rem;
     }
+
     /* Slogan */
     .slogan {
         font-size: 1.5rem; /* Tamanho maior para telas maiores */
-        margin-bottom: -30px;
         padding: 0 var(--space-md);
+        margin-bottom: var(--space-xs);
     }
 
     /* Info Container */
     .info-container {
         flex-direction: row;
         justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap; 
+        gap: var(--space-xs);
+        flex-wrap: wrap;
+        margin-top: var(--space-xs);
     }
 
     .info-container div {
-        background-color: transparent; 
-        padding: 10px;
+        background-color: transparent;
+        padding: var(--space-xs) var(--space-sm);
         border-radius: 8px;
     }
 
@@ -409,35 +409,35 @@
     }
 
     .info-container span {
+       
         font-size: 1em;
         color: #ffffff;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 1.5);
-        
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     }
 
     /* Tour Virtual */
     #panorama {
-        height: 400px; /* Aumenta a altura do panorama */
+        height: 400px;
     }
 
     /* Planta */
     #planta {
-        max-height: 300px; /* Aumenta a altura da planta */
+        max-height: 300px;
     }
 
     /* Localização */
     #localizacao h2,
     #localizacao h3 {
-        font-size: 1.5em; /* Aumenta o tamanho dos títulos */
+        font-size: 1.5em;
     }
 
     #localizacao img {
-        max-width: 100%; /* Garante que a imagem ocupe toda a largura */
+        max-width: 100%;
     }
 
     /* Footer */
     footer .footer-logos {
-        gap: var(--space-lg); /* Aumenta o espaçamento entre logos */
+        gap: var(--space-lg);
     }
 
     .logo-container {
@@ -448,6 +448,70 @@
     .social-button {
         font-size: 14px;
         padding: var(--space-sm) var(--space-lg);
+    }
+}
+/* Media Query para telas menores ou iguais a 480px */
+@media (max-width: 480px) {
+    #mini-header {
+        padding: var(--space-sm);
+    }
+
+    img.mini-logo {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .slogan {
+        font-size: 1.2rem;
+        margin-bottom: var(--space-md);
+        text-align: center;
+    }
+
+    .info-container {
+        flex-direction: column; /* Empilha os itens verticalmente */
+        align-items: center;
+        gap: var(--space-xs); /* Espaçamento entre os itens */
+    }
+
+    .info-container div {
+        background-color: transparent; /* Remove fundo preto */
+        justify-content: center;
+        padding: var(--space-xs) 0; /* Ajusta o padding */
+        flex-wrap: wrap; /* Permite que ícones e texto se adaptem */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    .info-container i {
+        font-size: 1em; /* Reduz o tamanho do ícone */
+    }
+
+    .info-container span {
+        font-size: 0.9em; /* Reduz o tamanho do texto */
+        color: #ffffff; /* Texto branco */
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Destaca o texto */
+        overflow-wrap: break-word; /* Quebra palavras longas */
+        line-height: 1.5; /* Aumenta o espaçamento entre linhas */
+    }
+
+    /* Tour Virtual */
+    #panorama {
+        height: 320px; /* Altura reduzida para telas menores */
+    }
+
+    /* Planta */
+    #planta {
+        max-height: 200px; /* Altura reduzida para telas menores */
+    }
+
+    /* Localização */
+    #localizacao h2,
+    #localizacao h3 {
+        font-size: 1.2em; /* Tamanho menor para títulos */
+    }
+
+    /* Footer */
+    footer .footer-logos {
+        gap: var(--space-md); /* Espaçamento menor no rodapé */
     }
 }
     </style>
